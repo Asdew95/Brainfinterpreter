@@ -1,5 +1,5 @@
 #ifndef BFINTERPRETER_H
-#define BRINTERPRETER_H
+#define BFINTERPRETER_H
 
 #include <stdbool.h>
 #include <stdint.h>
