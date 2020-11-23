@@ -1,0 +1,4 @@
+brainfinterpreter
+*.o
+*.b
+*.bf
