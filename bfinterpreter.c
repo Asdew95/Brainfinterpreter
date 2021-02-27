@@ -114,34 +114,8 @@ void bf_syscall(bfcode_t *bfcode)
         arg_pointer += arg_cells + 2;
     }
 
-    /* I'm not proud of this. I'm sure there is a better way. I just don't */
-    /* know the better way. If someone knows it, please tell me.           */
-    switch(argc) {
-        case 0:
-            ret_value = syscall(syscall_num);
-            break;
-        case 1:
-            ret_value = syscall(syscall_num, args[0]);
-            break;
-        case 2:
-            ret_value = syscall(syscall_num, args[0], args[1]);
-            break;
-        case 3:
-            ret_value = syscall(syscall_num, args[0], args[1], args[2]);
-            break;
-        case 4:
-            ret_value = syscall(syscall_num, args[0], args[1], args[2],
-                    args[3]);
-            break;
-        case 5:
-            ret_value = syscall(syscall_num, args[0], args[1], args[2],
-                    args[3], args[4]);
-            break;
-        case 6:
-            ret_value = syscall(syscall_num, args[0], args[1], args[2],
-                    args[3], args[4], args[5]);
-            break;
-    }
+    ret_value = syscall(syscall_num, args[0], args[1], args[2],
+                        args[3], args[4], args[5]);
     
     *bfcode->tape_ptr = (uint8_t) ret_value;
 }
