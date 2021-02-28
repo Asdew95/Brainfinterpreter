@@ -49,6 +49,7 @@ int interpret(char *filename, struct bf_flags flags)
     bf_interpret(bfcode);
 
     free(code);
+    free(bfcode);
 
     return 0;
 }
@@ -96,6 +97,8 @@ int main(int argc, char *argv[])
             return ret;
         }
     }
+
+    free(files);
 
     return 0;
 }
